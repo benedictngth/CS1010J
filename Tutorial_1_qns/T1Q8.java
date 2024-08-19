@@ -1,11 +1,11 @@
 class T1Q8 {
-  
+
   public static void main(String[] args) {
-    void func(5);
-    void func(3-7);
+    func(5);
+    func(3 - 7);
   }
-  
-  public static void func(y) {
+
+  public static void func(int y) {
     if (y < 0) {
       System.out.println("Nothing");
     } else {
