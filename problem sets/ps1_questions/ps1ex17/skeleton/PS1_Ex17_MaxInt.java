@@ -8,23 +8,30 @@
  * <Type your name here>
  */
 
-import java.util.*;
+import java.util.Scanner;
 
 class MaxInteger {
-  
+
   public static void main(String[] args) {
-    
+
     Scanner sc = new Scanner(System.in);
-    
+    int a, b, c;
     System.out.print("Enter three integers: ");
-    
-    
-    System.out.println("Maximum input integer is " );
+    a = sc.nextInt();
+    b = sc.nextInt();
+    c = sc.nextInt();
+
+    System.out.println("Maximum input integer is " + getMax(a, b, c));
   }
-  
-  // <Write a short description of the method here>
+
+  // returns the max integer among the 3 values
   public static int getMax(int num1, int num2, int num3) {
-    
-    return 0;  // stub, to be replaced by your code
+    if (num1 > num2 && num1 > num3) {
+      return num1;
+    } else if (num2 > num1 && num2 > num3) {
+      return num2;
+    } else {
+      return num3;
+    }
   }
 }
