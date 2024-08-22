@@ -3,6 +3,7 @@ import java.util.Scanner;
 class T1Q7 {
 
   public static void Main(String[] args) {
+    int startHr, startMin, startSec, endHr, endMin, endSec;
 
     // ask user to enter a value into num1
     Scanner sc = new Scanner(System.in);

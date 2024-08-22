@@ -16,8 +16,8 @@ public class tut1 {
         // "Now cur is 5"
 
         // QN 4
-        // "a = 2 b = 12"
-        // "a = 11 c = 2"
+        // "a = 2; b = 12"
+        // "a = 11; c = 2"
         // "d = 8"
 
         // QN 5
