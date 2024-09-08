@@ -11,17 +11,14 @@
 import java.util.*;
 
 class SquareNumber {
-  
+
   public static void main(String[] args) {
-    
-    
-    
+
     System.out.print("Enter an integer: ");
-    
-    
-    
+    Scanner sc = new Scanner(System.in);
+
     System.out.println(" is a square number");
-    
+
     System.out.println(" is not a square number");
   }
 }

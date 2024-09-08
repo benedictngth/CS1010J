@@ -1,9 +1,9 @@
 1b) Counts  the number of positive divisors for the integer i
-1d) ???
+1d) while (i<n/2)
 2a) 9!
 2b) sum of 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 (sum of geometric series 2^n)
 36
-2a) for (int i = -5; i < 100; i+=5)
+2a) for (i = -5; i < 100; i+=5)
 2b) do{
 	System.out.print("Enter n: ");
 	n = sc.nextInt()
