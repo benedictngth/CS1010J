@@ -17,7 +17,6 @@ class OddHunter {
     System.out.print("Enter a positive integer: ");
     int n = sc.nextInt();
     int sum = sumOdd(n);
-    System.out.println(sum);
     while (containsOdd(sum)) {
       sum += sumOdd(sum);
     }
