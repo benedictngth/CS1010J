@@ -1,0 +1,22 @@
+1ai) return n to power of 3
+recursive function
+
+bi) dothing(3) = 5; dothing(5):15
+bii) sum of 1 to n
+biii) 
+
+
+2)yes. it returns the base area as desired
+3)yes. returns the area as desired
+
+
+
+7a)
+for (int row = 1; row <= n; row++){
+	for(int a = 1; a<=  (2*row-1);a++ {
+		System.out.println("*");
+		
+})
+	System.out.println(); 
+}
+
