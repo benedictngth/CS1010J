@@ -25,29 +25,19 @@ class Hourglass {
     int flips2 = totalTime / hg2;
     int remainTime = totalTime % hg2;
 
-    // case where remains time = shorter hour glass
-    if (remainTime % hg1 == 0) {
+    while ((remainTime < totalTime && (remainTime) % hg1 != 0)) {
+      remainTime += hg2;
+      flips2--;
+    }
+    // find a points where both mutiply and sum to totalTime
+    if (remainTime < totalTime) {
       flips1 = remainTime / hg1;
       System.out.println(flips1 + " flip(s) for " + hg1 + "-minute hourglass and " +
           flips2 + " flip(s) for " + hg2 + "-minute hourglass.");
-      // case where remain time + one previous longer hourglass rolls back = n * short
-      // time hourglass
+
     } else {
-      while ((remainTime < totalTime && (remainTime) % hg1 != 0)) {
-        remainTime += hg2;
-        flips2--;
-      }
-
-      // System.out.println(remainTime);
-      if (remainTime < totalTime) {
-        flips1 = remainTime / hg1;
-        System.out.println(flips1 + " flip(s) for " + hg1 + "-minute hourglass and " +
-            flips2 + " flip(s) for " + hg2 + "-minute hourglass.");
-
-      } else {
-        System.out.println("Impossible!");
-      }
+      System.out.println("Impossible!");
     }
-
   }
+
 }
