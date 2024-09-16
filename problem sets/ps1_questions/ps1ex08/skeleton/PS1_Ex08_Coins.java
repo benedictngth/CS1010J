@@ -15,15 +15,14 @@ class Coins {
   public static void main(String[] args) {
 
     Scanner sc = new Scanner(System.in);
-    int numCoin = 0, pos = 0;
+    int numCoin = 0;
     int[] denomination = { 100, 50, 20, 10, 5, 1 };
     System.out.print("Enter amount in cents: ");
     int amt = sc.nextInt();
 
-    while (amt > 0) {
+    for (int pos = 0; amt > 0; pos++) {
       numCoin += amt / denomination[pos]; // finds max number of coins for the denomination
       amt %= denomination[pos]; // finds remaining amount after removing max number coins
-      pos++; // moves to next smallest denomination
     }
 
     System.out.println("Minimum number of coins needed: " + numCoin);
