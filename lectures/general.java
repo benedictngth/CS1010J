@@ -10,8 +10,6 @@ public class general {
             //do sth
         }
 
-
-
         for (int i = num; i<endPt; i++){
             if (someCondition){
                 return; //breaks the function instead of using a boolean value to track condition met
