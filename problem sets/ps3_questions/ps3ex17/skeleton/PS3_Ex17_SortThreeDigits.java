@@ -16,14 +16,14 @@ class SortThreeDigits {
     Scanner sc = new Scanner(System.in);
     System.out.print("Enter the number of elements: ");
     int size = sc.nextInt();
-    System.out.print("Enter " + " elements: ");
+    System.out.print("Enter " + size + " elements: ");
     int[] arr = new int[size];
     for (int i = 0; i < arr.length; i++) {
       arr[i] = sc.nextInt();
     }
     sortArray(arr);
 
-    System.out.print("Sorted array: " + Arrays.toString(arr));
+    System.out.println("Sorted array: " + Arrays.toString(arr));
 
   }
 

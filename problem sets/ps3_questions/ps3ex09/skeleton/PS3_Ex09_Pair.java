@@ -17,7 +17,7 @@ class Pair {
     System.out.print("Enter the number of distinct elements: ");
     int size = sc.nextInt();
     int[] arr = new int[size];
-    System.out.print("Enter " + " elements: ");
+    System.out.print("Enter " + size + " elements: ");
     for (int i = 0; i < arr.length; i++) {
       arr[i] = sc.nextInt();
     }
