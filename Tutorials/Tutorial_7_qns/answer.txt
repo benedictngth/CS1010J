@@ -3,8 +3,8 @@ line 1: object reference with no object creation
 Q1 obj = new Q1();
 line 2/3/4/5: properties one/two and methods changeOne/changeTwo are private and not accessible outside class Q1
 
-2a) 2
-2b) 1 \n 1
+2a) 3
+2b) 2 \n 2
 
 3a) 3
 3b) 6

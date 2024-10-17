@@ -36,7 +36,8 @@ class MinMax {
     for (int row = 0; row < rows; row++) {
       for (int column = 0; column < columns; column++) {
         max = mtx[row][column] > max ? mtx[row][column] : max;
-
+        // Math.min(mtx[row][column], min)
+        // Math.max(mtx[row][column], max)
         min = mtx[row][column] < min ? mtx[row][column] : min;
       }
     }
