@@ -1,0 +1,9 @@
+Enter the number of players: Enter the scores: Player  Score
+  0      3.5
+  1      2.0
+  2      3.5
+  3      5.5
+  4      5.5
+Enter ID of the two players to compare: Player 0 is stronger than player 1
+Enter ID of the two players to compare: Player 0 is stronger than player 2
+Enter ID of the two players to compare: Player 3 is stronger than player 4
