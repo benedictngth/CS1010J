@@ -9,28 +9,32 @@
  * <Type your name here>
  */
 
+import java.lang.*;
+
 class MyCircle {
-  
+
   // Attribute (Data member)
   private double radius;
-  
+
   // This constructor creates a MyCircle object with zero radius
-  public MyCircle( ) {
-    
-  }   
-  
+  public MyCircle() {
+    radius = 0.0;
+
+  }
+
   // Retrieve radius of a MyCircle object
   public double getRadius() {
-    return 0;  // this is a stub
-  }   
-  
+    return 0; // this is a stub
+  }
+
   // Set radius of a MyCircle object
   public void setRadius(double rad) {
-    
+    this.radius = rad;
+
   }
-  
+
   // Compute area of a MyCircle object
   public double computeArea() {
-    return 0;  // this is a stub
+    return Math.PI * Math.pow(radius, 2);
   }
 }

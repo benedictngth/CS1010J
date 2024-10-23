@@ -9,32 +9,38 @@
  */
 
 class Car {
-  
-  // Attributes
-  
-  
+
+  private String model, colour;
+  private double odo;
+
   // Constructor
   public Car(String mod, String col, double odo) {
-    
+    this.model = mod;
+    this.colour = col;
+    this.odo = odo;
   }
-  
+
   // Return the model of a Car object
   public String getModel() {
-    return "";  // stub
+    return this.model;
   }
-  
+
   // Return the colour of a Car object
   public String getColour() {
-    return "";  // stub
+    return this.colour;
   }
-  
+
   // Return the odometer value of a Car object
   public double getOdometer() {
-    return 0;  // stub
+    return this.odo;
   }
-  
+
   // Update the odometer with the distance travelled
   public void updateOdometer(double distance) {
-    
+    this.odo += distance;
+    while (this.odo > 999.9) {
+      this.odo -= 1000.0;
+    }
+
   }
 }

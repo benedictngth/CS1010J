@@ -10,42 +10,41 @@
  */
 
 import java.util.*;
+import java.text.*;
 
 class TestCar {
-  
-  public static void main(String[] args) {
-    
-        
-    System.out.print("Enter model: ");
-    
-    
-    System.out.print("Enter colour: ");
 
-    
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    DecimalFormat df = new DecimalFormat("0.0");
+
+    System.out.print("Enter model: ");
+    String model = sc.nextLine();
+
+    System.out.print("Enter colour: ");
+    String colour = sc.nextLine();
+
     System.out.print("Enter odometer value: ");
-    
-    
-    // create a car object with 3 values read
-    
-    
+    double odo = sc.nextDouble();
+
+    Car car = new Car(model, colour, odo);
+
     System.out.print("Enter the number of trips: ");
-    
-    // Note: there could be a few different designs
-    // Computation may be done partially in the main method
-    // and partially in the Car class.
-    
-    // compute the total distance travelled
-    
-    
-    // update car with the total distance
-    
-    
-    
-    System.out.println("Model: " );
-    System.out.println("Colour: " );
-    System.out.println("Odometer: " );
-    
-    System.out.println("Trips: " );
-    System.out.println("Distance per trip: " );
+    int trips = sc.nextInt();
+
+    double totalDistance = 0.0;
+    for (int i = 0; i < trips; i++) {
+      System.out.print("Distance for trip " + (i + 1) + ": ");
+      double distance = sc.nextDouble();
+      totalDistance += distance;
+      car.updateOdometer(distance);
+    }
+
+    System.out.println("Model: " + car.getModel());
+    System.out.println("Colour: " + car.getColour());
+    System.out.println("Odometer: " + df.format(car.getOdometer()));
+
+    System.out.println("Trips: " + trips);
+    System.out.println("Distance per trip: " + df.format(totalDistance / trips));
   }
 }

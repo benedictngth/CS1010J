@@ -9,35 +9,41 @@
  */
 
 class Voucher {
-  
-  // Attributes
-  
-  
+
+  private String voucherName;
+  private int voucherValue, voucherAmt;
+
   // Constructor
   public Voucher(String voucherName, int voucherValue, int voucherAmt) {
-    
-    
+    this.voucherName = voucherName;
+    this.voucherValue = voucherValue;
+    this.voucherAmt = voucherAmt;
+
   }
-  
+
   // Return name of a voucher
   public String getName() {
-    return "";  // stub
+    return this.voucherName;
   }
-  
+
   // Return face value of a voucher
   public int getValue() {
-    return 0;  // stub
+    return this.voucherValue;
   }
-  
+
   // Return the number of vouchers
   public int getAmt() {
-    return 0;  // stub
+    return this.voucherAmt;
   }
-  
+
   // Compute the number of vouchers to use given a price
   // such that there is no overpay
   public int useVoucher(int price) {
-    
-    return 0;  // stub
+    int voucherUsed = 0;
+    while (price >= this.voucherValue) {
+      price -= this.voucherValue;
+      voucherUsed++;
+    }
+    return voucherUsed;
   }
 }

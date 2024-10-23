@@ -11,31 +11,30 @@
 import java.util.*;
 
 class UseVoucher {
-  
+
   public static void main(String[] args) {
-    
-    
+    Scanner sc = new Scanner(System.in);
+
     System.out.print("Enter voucher name: ");
-    
-    
+    String name = sc.nextLine();
+
     System.out.print("Enter voucher face value: $");
-    
-    
+    int value = sc.nextInt();
+
     System.out.print("Enter the number of vouchers: ");
-    
-    
-    // create a Voucher object with 3 values read
-    
-    
+    int numVoucher = sc.nextInt();
+
+    Voucher voucher = new Voucher(name, value, numVoucher);
+
     System.out.print("Enter the price to pay: $");
-    
-    
-    // Call userVoucher() method to compute the number
-    // of vouchers to be used
-    
-    
-    System.out.println("Use " + " " +  " voucher(s)");
-    System.out.println("Cash payment: $" );
-    System.out.println("There remains " + " voucher(s)");
+    int price = sc.nextInt();
+
+    int voucherUsed = voucher.useVoucher(price);
+
+    System.out.println("Use " + voucherUsed + " " + voucher.getName() + " voucher(s)");
+    int cash = price - voucherUsed * voucher.getValue();
+    System.out.println("Cash payment: $" + cash);
+    int voucherRemain = voucher.getAmt() - voucherUsed;
+    System.out.println("There remains " + voucherRemain + " voucher(s)");
   }
 }
