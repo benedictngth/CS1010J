@@ -35,51 +35,59 @@ class Fraction {
 
   // Return a new Fraction object that is simplified from 'this' object
   // 'this' (the calling) fraction object should not be modified.
-  private Fraction simplify(Fraction fraction) {
-
-    while (euclidGcd(fraction.numer, fraction.denom) != 1) {
-      int gcd = euclidGcd(fraction.numer, fraction.denom);
-      fraction.numer /= gcd;
-      fraction.denom /= gcd;
+  private Fraction simplify() {
+    int numer = this.numer;
+    int denom = this.denom;
+    boolean negative = false;
+    if (numer < 0) {
+      numer = -numer;
+      negative = true;
+    } else if (denom < 0) {
+      denom = -denom;
+      negative = true;
     }
+    while (euclidGcd(numer, denom) != 1) {
+      int gcd = euclidGcd(numer, denom);
+      numer /= gcd;
+      denom /= gcd;
+    }
+    if (negative) {
+      return new Fraction(-numer, denom);
+    }
+    return new Fraction(numer, denom);
 
-    return fraction;
   }
 
   // Add this Fraction object with another and return
   // the sum as a new Fraction object in simplified form
   public Fraction add(Fraction another) {
-    int oriDenom = this.denom;
-    this.denom *= another.denom;
-
-    this.numer = this.numer * another.numer * oriDenom;
-
-    return simplify();
+    int newDenom = this.denom * another.denom;
+    int newNumer = this.numer * (another.denom) + another.numer * (this.denom);
+    return new Fraction(newNumer, newDenom).simplify();
   }
 
   // Return 'this' - 'another' as a new Fraction object
   public Fraction minus(Fraction another) {
-    this.denom *= another.denom;
+    int newDenom = this.denom * another.denom;
+    int newNumer = this.numer * another.denom - another.numer * this.denom;
 
-    this.numer = this.numer - another.numer * oriDenom;
-
-    return simplify();
+    return new Fraction(newNumer, newDenom).simplify();
   }
 
   // Return 'this' * 'another' as a new Fraction object
   public Fraction times(Fraction another) {
-    this.numer *= another.numer;
-    this.denom *= another.denom;
+    int newNumer = this.numer * another.numer;
+    int newDenom = this.denom * another.denom;
 
-    return simplify();
+    return new Fraction(newNumer, newDenom).simplify();
   }
 
   // Return 'this' / 'another' as a new Fraction object
   public Fraction divide(Fraction another) {
-    this.numer *= another.denom;
-    this.denom *= another.numer;
+    int newNumer = this.numer * another.denom;
+    int newDenom = this.denom * another.numer;
 
-    return simplify();
+    return new Fraction(newNumer, newDenom).simplify();
   }
 
   // return "numerator/denominator"
@@ -89,12 +97,14 @@ class Fraction {
 
   // Check if this object equals another
   public boolean equals(Fraction another) {
+    Fraction thisSimplify = this.simplify();
+    Fraction anotherSimplify = another.simplify();
 
-    return true; // stub
+    return (thisSimplify.numer == anotherSimplify.numer && thisSimplify.denom == anotherSimplify.denom);
   }
 
   // Check if this object is larger than another
   public boolean largerThan(Fraction another) {
-    return false; // stub
+    return this.numer * another.denom > another.numer * this.denom;
   }
 }
