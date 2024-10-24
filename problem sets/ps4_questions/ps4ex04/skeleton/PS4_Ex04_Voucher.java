@@ -45,5 +45,7 @@ class Voucher {
       voucherUsed++;
     }
     return voucherUsed;
+    // alternative to use integer divion and check whether price > voucherValue *
+    // voucherUsed
   }
 }

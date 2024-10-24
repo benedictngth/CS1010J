@@ -38,8 +38,7 @@ class Car {
   // Update the odometer with the distance travelled
   public void updateOdometer(double distance) {
     this.odo += distance;
-    while (this.odo > 999.9) {
-      this.odo -= 1000.0;
+    this.odo %=1000;
     }
 
   }
