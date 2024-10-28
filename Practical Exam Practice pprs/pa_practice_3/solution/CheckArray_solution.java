@@ -11,26 +11,26 @@
 
 import java.util.*;
 
-class CheckArray {
-  
+class CheckArray_solution {
+
   public static void main(String[] args) {
-    
+
     Scanner sc = new Scanner(System.in);
-    
+
     System.out.print("Enter the number of elements: ");
     int size = sc.nextInt();
-    
+
     int[] arr = new int[size];
-    
+
     System.out.print("Enter elements: ");
     for (int i = 0; i < size; i++) {
       arr[i] = sc.nextInt();
     }
-    
+
     System.out.println("Number of Armstrong number = " + countAN(arr));
     System.out.println("Second largest element = " + getSecondLargest(arr));
   }
-  
+
   // Return true if num is a Armstrong number, or false otherwise.
   public static boolean isAN(int num) {
     int sum = 0, toProcess = num;
@@ -41,7 +41,7 @@ class CheckArray {
     }
     return sum == num;
   }
-  
+
   // Return the number of Armstrong numbers in the given array.
   public static int countAN(int[] arr) {
     int count = 0;
@@ -52,13 +52,13 @@ class CheckArray {
     }
     return count;
   }
-  
+
   // Return the second largest integer in the given array.
   public static int getSecondLargest(int[] arr) {
-    
+
     int max = Math.max(arr[0], arr[1]);
     int secondMax = Math.min(arr[0], arr[1]);
-    
+
     for (int i = 2; i < arr.length; i++) {
       if (arr[i] > max) {
         secondMax = max;
@@ -67,7 +67,7 @@ class CheckArray {
         secondMax = arr[i];
       }
     }
-    
+
     return secondMax;
   }
 }
