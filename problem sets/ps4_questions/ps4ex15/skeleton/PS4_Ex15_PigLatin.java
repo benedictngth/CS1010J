@@ -15,21 +15,37 @@
 import java.util.*;
 
 class PigLatin {
-  
+
   public static void main(String[] args) {
-    
+    Scanner sc = new Scanner(System.in);
     System.out.print("Enter a sentence: ");
-    
-    System.out.println("Converted: " );
+    String sentence = sc.nextLine();
+    String[] words = sentence.split(" ");
+    String pigSentence = "";
+    for (int i = 0; i < words.length; i++) {
+      words[i] = convert(words[i]);
+    }
+    System.out.println("Converted: " + String.join(" ", words));
+
   }
-  
+
   // Convert a single word.
   // For a word starting with a consonant, move that first consonant
   // to the end of the word and append "ay".
   // For a word starting with a vowel, simply append "way" to the word.
   // Return the converted word.
   public static String convert(String word) {
-    
-    return "";  // stub
+    char firstLetter = word.charAt(0);
+    switch (firstLetter) {
+      case 'a':
+      case 'e':
+      case 'i':
+      case 'o':
+      case 'u':
+        return word + "way";
+
+      default:
+        return word.substring(1, word.length()) + firstLetter + "ay";
+    }
   }
 }

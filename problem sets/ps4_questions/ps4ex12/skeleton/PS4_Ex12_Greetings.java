@@ -11,21 +11,29 @@
 import java.util.*;
 
 class Greetings {
-  
+
   public static void main(String[] args) {
-    
+    Scanner sc = new Scanner(System.in);
     System.out.print("Your age? ");
-    
+    int age = sc.nextInt();
+    sc.nextLine();
     System.out.print("Your name? ");
-    
+    String name = sc.nextLine();
     System.out.print("Your gender? ");
-    
-    System.out.println("Hello boy " );
-    
-    System.out.println("Hey girl " );
-    
-    System.out.println("Hello Mr. " );
-    
-    System.out.println("Hey Ms. " );
+    String gender = sc.nextLine();
+    if (age < 18) {
+      if (gender.equals("Male")) {
+        System.out.println("Hello boy " + name);
+      } else {
+        System.out.println("Hey girl " + name);
+      }
+    } else {
+      if (gender.equals("Male")) {
+        System.out.println("Hello Mr. " + name);
+      } else {
+        System.out.println("Hey Ms. " + name);
+      }
+    }
+
   }
 }
