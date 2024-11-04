@@ -1,0 +1,6 @@
+1) E
+2a) 30
+2b) 3 + 2 + 1 + 3 = 9
+2c) 60
+2d) returns the smallest pair of digits from a digit with length being even
+
