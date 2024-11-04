@@ -11,18 +11,22 @@
 import java.util.*;
 
 class SquareSum {
-  
+
   public static void main(String[] args) {
-    
+    Scanner sc = new Scanner(System.in);
     System.out.print("Enter a positive integer: ");
-    
-    System.out.println("Square sum of all digits is " );
+    int num = sc.nextInt();
+    System.out.println("Square sum of all digits is " + squareSum(num));
   }
-  
+
   // Calculate the square sum of all digits in a given number
   // Pre-cond: number > 0
   public static int squareSum(int num) {
-    
-    return 0;  // stub
+    if (num == 0) {
+      return 0;
+    } else {
+      int digit = num % 10;
+      return squareSum(num / 10) + digit * digit;
+    }
   }
 }

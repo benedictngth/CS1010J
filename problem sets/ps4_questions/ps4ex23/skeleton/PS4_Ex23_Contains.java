@@ -10,23 +10,31 @@
 import java.util.*;
 
 class Contains {
-  
+
   public static void main(String[] args) {
-    
+    Scanner sc = new Scanner(System.in);
     System.out.print("Enter a positive integer: ");
-    
+    int num = sc.nextInt();
     System.out.print("Enter a single digit integer k: ");
-    
-    System.out.println( " appears in " );
-    
-    System.out.println( " doesn't appear in " );
+    int digit = sc.nextInt();
+    if (contains(num, digit)) {
+      System.out.println(digit + " appears in " + num);
+    } else {
+      System.out.println(digit + " doesn't appear in " + num);
+    }
   }
-  
+
   // Check if k appears in any digit of number
   // Return true if so, or false otherwise
   // Pre-cond: number > 0, k < 10 && k >= 0
   public static boolean contains(int number, int k) {
-    
-    return false;  // stub
+    // two terminating cases
+    if (number == 0) {
+      return false;
+    } else if (number % 10 == k) {
+      return true;
+    } else {
+      return contains(number / 10, k);
+    }
   }
 }
