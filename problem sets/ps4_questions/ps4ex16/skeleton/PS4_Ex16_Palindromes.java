@@ -43,7 +43,7 @@ class Palindromes {
       } else if (str.charAt(startIdx) != str.charAt(endIdx)) {
         return false;
       } else {
-        startIdx++;π
+        startIdx++;
         endIdx--;
       }
     }
