@@ -5,27 +5,39 @@
  * This program determines the largest pair of digits
  * of a positive integer num.
  * 
- * <Type your name here>
+ * Author: Zhou Lifeng
  */
 
 import java.util.*;
 
 class LargestDigitPair {
-
+  
   public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
+    
+    Scanner scanner = new Scanner(System.in);
+    
     System.out.print("Enter a positive integer: ");
-    int integer = sc.nextInt();
-    System.out.println("Largest pair of digits in " + " is " + largestDigitPair(integer));
+    int num = scanner.nextInt();
+    
+    System.out.println("Largest pair of digits in " + num + " is " + largestDigitPair(num));
   }
-
+  
   // Return the largest digit pairs in num
   // Pre-cond: num > 0
   public static int largestDigitPair(int num) {
-    if (num < 100) {
+    
+    if (num < 100) {  // two digits or less
       return num;
+    }
+    
+    // use a variable 'pair' to store result
+    // so as to avoid repeated method calls
+    int pair = largestDigitPair(num/100);
+    
+    if (pair > num%100) {
+      return pair;
     } else {
-      return largestDigitPair(num / 100) > num % 100 ? largestDigitPair(num / 100) : num % 100;
+      return num%100;
     }
   }
 }
